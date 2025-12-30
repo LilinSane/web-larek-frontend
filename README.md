@@ -326,9 +326,34 @@ events: IEvents — брокер событий приложения.
 
 Методы:
 ```TypeScript
-render(data?: object): HTMLElement
-Отрисовывает `header` и возвращает DOM-элемент
+render(): HTMLElement
+Отрисовывает `header` со статическими данными и возвращает DOM-элемент.
 ```
+
+### ProductListItemElement
+
+---
+
+View-компонент `ProductListItemElement` отображает один товар из списка товаров для каталога. Реализует интерфейсы `IView` и `IViewConstructor`.
+
+Конструктор:
+```TypeScript
+constructor(container: HTMLElement, events: IEvents)
+```
+
+Параметры конструктора:
+```TypeScript
+container: HTMLElement — DOM-контейнер для рендера компонента;
+
+events: IEvents — брокер событий приложения.
+```
+
+Методы:
+```TypeScript
+render(data?: IProduct): HTMLElement
+Принимает на входе объект продукта. Отрисовывает продукт и возвращает DOM-элемент
+```
+
 
 ### ProductListElement
 
@@ -350,15 +375,39 @@ events: IEvents — брокер событий приложения.
 
 Методы:
 ```TypeScript
-render(data?: object): HTMLElement
-Отрисовывает список и возвращает DOM-элемент
+render(data?: HTMLElement[]): HTMLElement
+Принимает на входе массив уже готовых представлений продкутов. Отрисовывает список и возвращает DOM-элемент
+```
+
+### ModalComponent
+
+---
+
+View-компонент `ModalComponent` отображает пустое модальное окно с кнопкной его закрытия. Реализует интерфейсы `IView` и `IViewConstructor`.
+
+Конструктор:
+```TypeScript
+constructor(container: HTMLElement, events: IEvents)
+```
+
+Параметры конструктора:
+```TypeScript
+container: HTMLElement — DOM-контейнер для рендера компонента;
+
+events: IEvents — брокер событий приложения.
+```
+
+Методы:
+```TypeScript
+render(data?: HTMLElement): HTMLElement
+Принимает на входе готовое представление. Отрисовывает модальное окно, наполняет его переданным компонентом и возвращает DOM-элемент
 ```
 
 ### ProductCardElement
 
 ---
 
-View-компонент `ProductCardElement` отображает на экране карточку товара в формате модального окна, с подробной информацией о товрае, а также кнопкой "В корзину". Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `ProductCardElement` отображает на экране карточку товара, с подробной информацией о товрае, а также кнопкой "В корзину". Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
@@ -374,15 +423,39 @@ events: IEvents — брокер событий приложения.
 
 Методы:
 ```TypeScript
-render(data?: object): HTMLElement
-Отрисовывает товар и возвращает DOM-элемент
+render(data?: IProduct): HTMLElement
+Принимает на входе один объект товара. Отрисовывает товар и возвращает DOM-элемент
+```
+
+### CartItemElement
+
+---
+
+View-компонент `CartItemElement` отображает один товар из списка товаров для корзины. Реализует интерфейсы `IView` и `IViewConstructor`.
+
+Конструктор:
+```TypeScript
+constructor(container: HTMLElement, events: IEvents)
+```
+
+Параметры конструктора:
+```TypeScript
+container: HTMLElement — DOM-контейнер для рендера компонента;
+
+events: IEvents — брокер событий приложения.
+```
+
+Методы:
+```TypeScript
+render(data?: IProduct): HTMLElement
+Принимает на входе объект продукта. Отрисовывает продукт и возвращает DOM-элемент
 ```
 
 ### CartElement
 
 ---
 
-View-компонент `CartElement` отображает на экране список товаров в корзине в формате модального окна с кнопкой "Оформить". Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `CartElement` отображает на экране список товаров в корзине с кнопкой "Оформить". Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
@@ -398,15 +471,15 @@ events: IEvents — брокер событий приложения.
 
 Методы:
 ```TypeScript
-render(data?: object): HTMLElement
-Отрисовывает корзину и возвращает DOM-элемент
+render(data?: HTMLElement[]): HTMLElement
+Принимает на входе массив уже готовых представлений продкутов. Отрисовывает корзину и возвращает DOM-элемент
 ```
 
 ### PaymentDataComponent
 
 ---
 
-View-компонент `PaymentDataComponent` отображает на экране форму с данными об оплате в формате модального окна. Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `PaymentDataComponent` отображает на экране форму с данными об оплате. Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
@@ -422,7 +495,7 @@ events: IEvents — брокер событий приложения.
 
 Методы:
 ```TypeScript
-render(data?: object): HTMLElement
+render(): HTMLElement
 Отрисовывает форму оплаты и возвращает DOM-элемент
 ```
 
@@ -430,7 +503,7 @@ render(data?: object): HTMLElement
 
 ---
 
-View-компонент `PaymentDataComponent` отображает на экране форму с данными о контактах заказчика в формате модального окна. Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `ContactDataComponent` отображает на экране форму с данными о контактах заказчика. Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
@@ -446,7 +519,7 @@ events: IEvents — брокер событий приложения.
 
 Методы:
 ```TypeScript
-render(data?: object): HTMLElement
+render(): HTMLElement
 Отрисовывает форму контактов и возвращает DOM-элемент
 ```
 
@@ -454,7 +527,7 @@ render(data?: object): HTMLElement
 
 ---
 
-View-компонент `OrderStatusComponent` отображает на экране статус заказа в формате модального окна. Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `OrderStatusComponent` отображает на экране статус заказа. Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
@@ -470,8 +543,8 @@ events: IEvents — брокер событий приложения.
 
 Методы:
 ```TypeScript
-render(data?: object): HTMLElement
-Отрисовывает статус и возвращает DOM-элемент
+render(data?: IPaymentData): HTMLElement
+Принимает на вход объект статуса оплаты. Отрисовывает статус и возвращает DOM-элемент
 ```
 
 ---
