@@ -407,7 +407,7 @@ render(data?: HTMLElement): HTMLElement
 
 ---
 
-View-компонент `ProductCardElement` отображает на экране карточку товара, с подробной информацией о товрае, а также кнопкой "В корзину". Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `ProductCardElement` отображает на экране карточку товара, с подробной информацией о товрае, а также кнопкой "В корзину". Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
@@ -455,7 +455,7 @@ render(data?: IProduct): HTMLElement
 
 ---
 
-View-компонент `CartElement` отображает на экране список товаров в корзине с кнопкой "Оформить". Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `CartElement` отображает на экране список товаров в корзине с кнопкой "Оформить". Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
@@ -479,7 +479,7 @@ render(data?: HTMLElement[]): HTMLElement
 
 ---
 
-View-компонент `PaymentDataComponent` отображает на экране форму с данными об оплате. Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `PaymentDataComponent` отображает на экране форму с данными об оплате. Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
@@ -503,7 +503,7 @@ render(): HTMLElement
 
 ---
 
-View-компонент `ContactDataComponent` отображает на экране форму с данными о контактах заказчика. Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `ContactDataComponent` отображает на экране форму с данными о контактах заказчика. Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
@@ -527,7 +527,7 @@ render(): HTMLElement
 
 ---
 
-View-компонент `OrderStatusComponent` отображает на экране статус заказа. Можно передать в объект `ModalComponent`. Реализует интерфейсы `IView` и `IViewConstructor`.
+View-компонент `OrderStatusComponent` отображает на экране статус заказа. Реализует интерфейсы `IView` и `IViewConstructor`.
 
 Конструктор:
 ```TypeScript
